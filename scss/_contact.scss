@@ -49,4 +49,14 @@ section#contact {
   .text-danger {
     color: $theme-danger;
   }
+  .contact-us{
+    color: 'white';
+    font-size: 20px
+  }
+  .social-links{
+    font-size: 32px;
+    >li{
+      padding: 10px
+    }
+  }
 }
