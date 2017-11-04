@@ -22,15 +22,16 @@
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
+    <link href="knots_product_files/styles.css" rel="stylesheet">
 
   </head>
 
-  <body id="page-top" style="background: rgba(75,124,175,0.5) url('http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/727/thumbs/baby-pink-and-blue-patterns-1.jpg') repeat right top;">
+  <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav" style="background-color: rgba(75,124,175,0.5)">
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html">
           <img class="img-fluid" src="images/knotsbag.png" height='42px' width='100%' alt="Knots bag logo">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,67 +40,123 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="product.html">Bow wow</a>
+            <!-- <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/product.html">Bow wow</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#team">Team</a>
+              <a class="nav-link js-scroll-trigger" href="/index.html#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="/index.html#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/index.html#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="col-md-12" style="background-color: white">
-      <div class="row" style="align-items: center">
-        <div class="col-md-7">
-          <img class="featurette-image img-responsive center-block" width="100%" alt="500x500" src="images/portfolio/01L.jpg" data-holder-rendered="true">
-        </div>
-        <div class="col-md-5">
-          <div class="col-md-12 text-center">
-            <h4 class="featurette-heading"><span class="text-muted">Size & Fit Information</span></h2>
-            <p class="lead text-muted">Height 7" | Width 10" | depth 1.5"</p>
-          </div>
-          <div class="text-muted" style="padding: 10px 30px">
-            <ul>
-              <li>Designer handwoven bags</li>
-              <li>Weighs approximately 265g</li>
-              <li>Craft revival with contemporary design</li>
-              <li>Sturdy yet flexible design</li>
-              <li>Multitude of holding options</li>
-              <li>Made in India</li>
-            </ul>
-            <p>
-                Each bag is unique, compact, lightweight and
-                crafted with 5mm wire with roomy interiors to
-                fit tablets, phones, wallets and other essentials
-                as a natural extension of the pocket. Bow wow
-                comes in a range of neutral, quirky and bold
-                colours in secret and glass collections.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="product-display">
+			<div class="container-fliud">
+  				<div class="wrapper row">
+  					<div class="preview col-md-8">
+  						<div class="preview-pic tab-content" id="product-pics"></div>
+  						<ul class="preview-thumbnail nav nav-tabs" id="product-thumbs"></ul>
+  					</div>
+  					<div class="details col-md-4">
+  						<h3 class="product-title">Size & Fit Information</h3>
+              <p class="lead">height 7" &nbsp&nbsp|&nbsp&nbsp width 10" &nbsp&nbsp|&nbsp&nbsp depth 1.5"</p>
+              <div class="text-muted product-description" style="padding: 10px 0px">
+                <ul>
+                  <li>Designer handwoven bags</li>
+                  <li>Weighs approximately 265g</li>
+                  <li>Craft revival with contemporary design</li>
+                  <li>Sturdy yet flexible design</li>
+                  <li>Multitude of holding options</li>
+                  <li>Made in India</li>
+                </ul>
+                <p>
+                  Each bag is unique, compact, lightweight and
+                  crafted with 5mm wire with roomy interiors to
+                  fit tablets, phones, wallets and other essentials
+                  as a natural extension of the pocket. Bow wow
+                  comes in a range of neutral, quirky and bold
+                  colours in secret and glass collections.
+                </p>
+              </div>
+
+  						<!-- <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p> -->
+
+  						<h5 class="colors">
+                <ul class="preview-thumbnail colors nav nav-tabs">
+    						  <li><a class="color-thumb" data-color="lime"><img src="./knots_product_files/images/lime/1_lime.jpg"></a></li>
+    						  <li><a class="color-thumb" data-color="royaltee"><img src="./knots_product_files/images/royaltee/1_royaltee.jpg"></a></li>
+    						  <li><a class="color-thumb" data-color="steel"><img src="./knots_product_files/images/steel/1_steel.jpg"></a></li>
+    						  <li><a class="color-thumb" data-color="universal"><img src="./knots_product_files/images/universal/1_universal.jpg"></a></li>
+    						</ul>
+              </h5>
+  						<!-- <h4 class="price">current price: <span>$180</span></h4>
+  						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p> -->
+  						<!-- <h5 class="sizes">sizes:
+  							<span class="size" data-toggle="tooltip" title="small">s</span>
+  							<span class="size" data-toggle="tooltip" title="medium">m</span>
+  							<span class="size" data-toggle="tooltip" title="large">l</span>
+  							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+  						</h5> -->
+  						<!-- <div class="action">
+  							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+  							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+  						</div> -->
+  					</div>
+  				</div>
+  			</div>
+  	</div>
+
     <!-- Footer -->
-    <footer style="background-color: rgba(75,124,175,0.5)">
+    <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
             <span class="copyright">Copyright &copy; Knotsbag 2017</span>
           </div>
           <div class="col-md-4">
+            <!-- <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/knotsbag">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/knotsbag">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/knotsbag/">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/knotsbag/">
+                  <i class="fa fa-snapchat"></i>
+                </a>
+              </li>
+            </ul> -->
           </div>
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li class="list-inline-item">
                 <span>All rights reserved</span>
               </li>
+              <!-- <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -116,7 +173,7 @@
 
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="knots_product_files/product.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
