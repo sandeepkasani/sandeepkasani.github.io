@@ -14,7 +14,7 @@ $( document ).ready(function() {
        active = "active";
      }
      product_pic_html = product_pic_html + '<div class="tab-pane '+active+'" id="pic-'+i+'"><img src="./knots_product_files/images/'+selectedcolor+'/'+i+'_'+selectedcolor+'.jpg"></div>';
-     product_thumb_html = product_thumb_html + '<li class="'+active+'"><a data-target="#pic-'+i+'" data-toggle="tab"><img src="./knots_product_files/images/'+selectedcolor+'/'+i+'_'+selectedcolor+'.jpg"></a></li>';
+     product_thumb_html = product_thumb_html + '<li class="'+active+'"><a data-target="#pic-'+i+'" data-toggle="tab"><img src="./knots_product_files/images/'+selectedcolor+'/thumb_'+selectedcolor+'.jpg"></a></li>';
    }
    $("#product-pics").html(product_pic_html);
    $("#product-thumbs").html(product_thumb_html);
