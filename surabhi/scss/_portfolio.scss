@@ -54,9 +54,15 @@
         text-transform: none;
       }
       p {
-        font-size: 16px;
-        font-style: italic;
-        margin: 0;
+        font-family: Lato;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #606060;
         @include serif-font;
       }
     }
@@ -64,6 +70,20 @@
   * {
     z-index: 2;
   }
+}
+.btn-capri{
+  background-color: #2a2c4d;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.21;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 70px;
 }
 @media(min-width:767px) {
   #portfolio {

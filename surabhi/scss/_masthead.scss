@@ -2,7 +2,7 @@
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url('../img/banner.jpg');
+  background-image: url('../img/banner.png');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -31,6 +31,15 @@ header.masthead {
       text-align: left;
       padding-top: 200px;
       padding-bottom: 200px;
+      p {
+        font-size: 18px;
+        color: #47c3d8;
+        font-weight: 100;
+        letter-spacing: 0.4px;
+        span {
+          font-weight: 500
+        }
+      }
       .intro-lead-in {
         margin-bottom: 25px;
         @include sans-serif;
