@@ -16,6 +16,7 @@
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
@@ -40,9 +41,46 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Products</a>
+            <li class="dropdown hover-dropdown nav-item">
+              <a href="#portfolio" class="dropdown-toggle nav-link js-scroll-trigger" role="button" aria-haspopup="true" aria-expanded="true">Products</a>
+              <div class="dropdown-menu">
+                <div class="col-lg-12 row">
+                  <div class="col-md-4">
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Pumps</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Industrial Monoblock Pump (MI series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Horizontal Split Case Pumps (CGS Series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>End Suction Pumps (CZ Series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Vertical Inline Pumps (ILM Series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Multistage Pumps (CGHM & CGVM Series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Industrial Monoblock Pump (MI series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Dewatering Pumps (DW Series)</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Horizontal Split Case Pumps ( CGS Series)</p></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Water Treatment Plant</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Softner Plant</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>DM Plant</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>RO Plant</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>UF Plant</p></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)"><p>Effluent Treatment & Recycling</p></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Membrane</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Membrane Housing</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Purolite Resins</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>FRP Filters Vessels</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Multiport Valve</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Metering Dosing Pump</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Flow Meter/Pressure Gauges</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>Cartridge Filter & Housing</h6></a>
+                    <a class="products-nav-link" href="products.html?prodType=Pumps"><h6>TDS Meter</h6></a>
+                  </div>
+                </div>
+              </div>
             </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Products</a>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#careers">Careers</a>
             </li>
@@ -119,7 +157,7 @@
         <br/>
         <div class="row">
           <div class="col-md-3 col-sm-3 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+            <a class="portfolio-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)">
               <img class="img-fluid" src="img/products/blue.jpg" alt="">
             </a>
             <div class="portfolio-caption">
@@ -127,7 +165,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-3 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+            <a class="portfolio-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)">
               <img class="img-fluid" src="img/products/yellow.png" alt="">
             </a>
             <div class="portfolio-caption">
@@ -135,7 +173,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-3 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+            <a class="portfolio-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)">
               <img class="img-fluid" src="img/products/lightblue.png" alt="">
             </a>
             <div class="portfolio-caption">
@@ -143,7 +181,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-3 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+            <a class="portfolio-link" href="products.html?prodType=Pumps&prodName=Industrial%20Monoblock%20Pump%20(MI%20series)">
               <img class="img-fluid" src="img/products/bigrig.jpg" alt="">
             </a>
             <div class="portfolio-caption">
@@ -153,7 +191,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12 text-center">
-            <button class="btn btn-capri btn-xl text-uppercase" type="submit">View All</button>
+            <a class="btn btn-capri btn-xl text-uppercase" href="products.html">View All</a>
           </div>
         </div>
       </div>
@@ -326,25 +364,25 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <p>Pumps</p>
-            <p>Membrane</p>
-            <p>Membrane Housing</p>
-            <p>Purolite Resins</p>
-            <p>FRP Filters Vessels</p>
+            <a class="products-nav-link" href="products.html?prodType=Pumps"><p>Pumps</p></a>
+            <a class="products-nav-link" href="products.html?prodType=Membrane"><p>Membrane</p></a>
+            <a class="products-nav-link" href="products.html?prodType=Membrane%20Housing"><p>Membrane Housing</p></a>
+            <a class="products-nav-link" href="products.html?prodType=Purolite%20Resins"><p>Purolite Resins</p></a>
+            <a class="products-nav-link" href="products.html?prodType=FRP%20Filters%20Vessels"><p>FRP Filters Vessels</p></a>
           </div>
           <div class="col-md-4">
-            <p>Multiport Valve</p>
-            <p>Metering Dosing Pump</p>
-            <p>Flow Meter/Pressure Gauges</p>
-            <p>Cartridge Filter & Housing</p>
-            <p>TDS Meter</p>
+            <a class="products-nav-link" href="products.html?prodType=Multiport%20Valve"><p>Multiport Valve</p></a>
+            <a class="products-nav-link" href="products.html?prodType=Metering%20Dosing%20Pump"><p>Metering Dosing Pump</p></a>
+            <a class="products-nav-link" href="products.html?prodType=Flow%20Meter/Pressure%20Gauges"><p>Flow Meter/Pressure Gauges</p></a>
+            <a class="products-nav-link" href="products.html?prodType=Cartridge%20Filter%20&%20Housing"><p>Cartridge Filter & Housing</p></a>
+            <a class="products-nav-link" href="products.html?prodType=TDS%20Meter"><p>TDS Meter</p></a>
           </div>
           <div class="col-md-4">
-            <p>Softner Plant</p>
-            <p>DM Plant</p>
-            <p>RO Plant</p>
-            <p>UF Plant</p>
-            <p>Effluent Treatment & Recycling</p>
+            <a class="products-nav-link" href="products.html?prodType=Softner%20Plant"><p>Softner Plant</p>
+            <a class="products-nav-link" href="products.html?prodType=DM%20Plant"><p>DM Plant</p>
+            <a class="products-nav-link" href="products.html?prodType=RO%20Plant"><p>RO Plant</p>
+            <a class="products-nav-link" href="products.html?prodType=UF%20Plant"><p>UF Plant</p>
+            <a class="products-nav-link" href="products.html?prodType=TEffluent%20Treatment%20&%20Recycling"><p>Effluent Treatment & Recycling</p>
           </div>
         </div>
         <div class="row">
@@ -355,211 +393,7 @@
       </div>
     </footer>
 
-    <!-- Portfolio Modals -->
 
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Explore</li>
-                    <li>Category: Graphic Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Finish</li>
-                    <li>Category: Identity</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Lines</li>
-                    <li>Category: Branding</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Southwest</li>
-                    <li>Category: Website Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Window</li>
-                    <li>Category: Photography</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -574,6 +408,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
+    <script src="js/app.js"></script>
 
   </body>
 

@@ -13,7 +13,8 @@ p {
 a {
   color: #fed136; }
   a:hover {
-    color: #fec503; }
+    color: white !important;
+    text-decoration: none; }
 
 .text-primary {
   color: #fed136 !important; }
@@ -91,6 +92,110 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #fed136; }
 
+.products-page {
+  background-image: url(../img/banner.png); }
+  .products-page .bg-light {
+    background-color: white; }
+  .products-page .nav-tabs .nav-item {
+    margin-bottom: -1px;
+    width: 20%;
+    text-align: center; }
+  .products-page section {
+    padding: 30px 0; }
+  .products-page #product-display {
+    margin-bottom: 40px; }
+  .products-page .product-name {
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.47;
+    letter-spacing: 0.4px;
+    text-align: left;
+    color: #2a2c4d; }
+  .products-page .product-info {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    text-align: left;
+    color: #606060;
+    padding-top: 30px; }
+  .products-page .product-image {
+    text-align: center; }
+    .products-page .product-image img {
+      width: 80%; }
+  .products-page .section-heading {
+    font-family: Montserrat;
+    font-size: 42px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.26;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #2a2c4d;
+    padding: 20px; }
+  .products-page .type-info {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #2a2c4d;
+    margin-bottom: 50px;
+    padding: 0 25px; }
+  .products-page .nav-tabs {
+    border-bottom: none;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase; }
+    .products-page .nav-tabs .nav-item {
+      height: 100%; }
+      .products-page .nav-tabs .nav-item .nav-link {
+        height: 100%;
+        font-family: sans-serif;
+        color: #47c3d8; }
+  .products-page .nav-tabs .nav-link:focus, .products-page .nav-tabs .nav-link:hover {
+    color: #47c3d8 !important;
+    border: none !important; }
+  .products-page .nav-tabs .nav-link.active {
+    color: #2a2c4d !important;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 18px;
+    background-color: transparent;
+    border: none !important;
+    border-bottom: 3px solid #2a2c4d !important; }
+
+.products-nav-link {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #47c3d8; }
+  .products-nav-link :hover {
+    color: #47c3d8 !important; }
+  .products-nav-link h6 {
+    padding: 5px 0 15px; }
+  .products-nav-link p {
+    font-size: 12px;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    font-weight: 100;
+    font-family: sans-serif; }
+
 #mainNav {
   background-color: #171130; }
   #mainNav .navbar-toggler {
@@ -107,16 +212,23 @@ body {
     font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive; }
     #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
       color: #05040a; }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    font-size: 90%;
-    font-weight: 400;
-    padding: 0.75em 0;
-    letter-spacing: 1px;
-    color: #47c3d8;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-    #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-      border-bottom: 2px solid #47c3d8;
-      padding-bottom: 5px !important; }
+  #mainNav .dropdown-menu {
+    padding: 30px;
+    width: 77vw;
+    left: -145px;
+    top: 40px !important; }
+  #mainNav .navbar-nav {
+    margin-bottom: -55px !important; }
+    #mainNav .navbar-nav .nav-item .nav-link {
+      font-size: 90%;
+      font-weight: 400;
+      padding: 0.75em 0;
+      letter-spacing: 1px;
+      color: #47c3d8;
+      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color: white;
+        padding-bottom: 5px !important; }
 
 @media (min-width: 992px) {
   #mainNav {
@@ -257,11 +369,7 @@ header.masthead {
       line-height: normal;
       letter-spacing: normal;
       text-align: left;
-      color: #606060;
-      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-
-#portfolio * {
-  z-index: 2; }
+      color: #606060; }
 
 .btn-capri {
   background-color: #2a2c4d;
@@ -351,7 +459,7 @@ header.masthead {
     text-align: center;
     color: #ffffff; }
   #careers .sub-heading {
-    font-family: sans-serif;
+    font-family: lato;
     font-size: 24px;
     font-weight: 100;
     font-style: normal;
@@ -377,7 +485,7 @@ header.masthead {
       text-align: left;
       color: #2a2c4d !important; }
     #careers .positions .opening-location {
-      font-family: sans-serif;
+      font-family: lato;
       font-size: 20px;
       font-weight: 300;
       font-style: normal;
@@ -387,7 +495,7 @@ header.masthead {
       text-align: left;
       color: #606060 !important; }
     #careers .positions .opening-JD {
-      font-family: sans-serif;
+      font-family: lato;
       font-size: 20px;
       font-weight: normal;
       font-style: normal;
@@ -398,7 +506,7 @@ header.masthead {
       color: #606060 !important;
       padding: 15px 0; }
     #careers .positions .opening-qualification {
-      font-family: sans-serif;
+      font-family: lato;
       font-size: 20px;
       font-weight: normal;
       font-style: normal;
@@ -413,6 +521,9 @@ header.masthead {
       line-height: 1;
       margin-top: 40px;
       padding: 10px 40px; }
+
+.products-nav {
+  border-bottom: 1px solid #dee2e6; }
 
 .timeline {
   position: relative;
@@ -723,7 +834,7 @@ footer {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   footer p {
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 18px !important;
     font-weight: 100;
     font-style: normal;
     font-stretch: normal;

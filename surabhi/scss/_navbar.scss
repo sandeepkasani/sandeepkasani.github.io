@@ -21,7 +21,15 @@
       color: darken($default, 10%);
     }
   }
+
+  .dropdown-menu{
+    padding: 30px;
+    width: 77vw;
+    left: -145px;
+    top: 40px!important;
+  }
   .navbar-nav {
+    margin-bottom: -55px!important;
     .nav-item {
       .nav-link {
         font-size: 90%;
@@ -32,8 +40,8 @@
         @include heading-font;
         &.active,
         &:hover {
-          // color: $primary;
-          border-bottom: 2px solid #47c3d8;
+          color: white;
+          // border-bottom: 2px solid #47c3d8;
           padding-bottom: 5px !important;
         }
       }

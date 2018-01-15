@@ -63,12 +63,11 @@
         letter-spacing: normal;
         text-align: left;
         color: #606060;
-        @include serif-font;
       }
     }
   }
   * {
-    z-index: 2;
+    // z-index: 2;
   }
 }
 .btn-capri{
@@ -180,7 +179,7 @@
     color: #ffffff;
   }
   .sub-heading {
-    font-family: sans-serif;
+    font-family: lato;
     font-size: 24px;
     font-weight: 100;
     font-style: normal;
@@ -208,7 +207,7 @@
       color: #2a2c4d!important;
     }
     .opening-location{
-      font-family: sans-serif;
+      font-family: lato;
       font-size: 20px;
       font-weight: 300;
       font-style: normal;
@@ -219,7 +218,7 @@
       color: #606060!important;
     }
     .opening-JD{
-      font-family: sans-serif;
+      font-family: lato;
       font-size: 20px;
       font-weight: normal;
       font-style: normal;
@@ -231,7 +230,7 @@
       padding: 15px 0;
     }
     .opening-qualification{
-      font-family: sans-serif;
+      font-family: lato;
       font-size: 20px;
       font-weight: normal;
       font-style: normal;
@@ -250,4 +249,8 @@
       padding: 10px 40px;
     }
   }
+}
+
+.products-nav{
+  border-bottom: 1px solid #dee2e6;
 }
