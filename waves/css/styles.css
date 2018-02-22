@@ -1,0 +1,37 @@
+button:focus, a:focus{outline:none!important}
+
+canvas{border: 2px solid black}
+.no-padding{
+  padding: 0;
+}
+.properties{
+  width:calc(100% - 1005px);
+  padding: 0;
+  float: left;
+}
+.canvas{
+  width: 1000px;
+  padding: 10px 0 0;
+  float: left;
+}
+.wave-head{text-shadow: 0px 2px 2px white; padding:5px; margin-top:5px}
+.properties{background-color: #F5F5F5; border: 2px solid #ccc; height:100vh; overflow-x: visible; overflow-y: auto; z-index:3; transition: left 0.5s;}
+/*.properties:hover{left:0}*/
+.properties .drag-right{position: fixed!important; font-size:30px; top:calc(49vh); left:-20px; z-index: 4}
+.properties .addItem{border-top: 2px solid #aaa; padding-top: 10px}
+.properties .accordian div{padding: 5px 0}
+.properties .list-accordian{padding: 0;background-color: white}
+.properties .list-accordian .panel-group{margin-bottom: 2px!important}
+.properties label{padding: 3px 10px}
+.properties .btn-default{width:90%}
+.panel-body{padding: 5px}
+.panel-body .prop-label{padding-top: 10px}
+.panel-body .prop-label+div>input{text-indent: 5px}
+.panel-title h4{text-align: center; margin: 0; text-shadow: 0px 0px 2px white;}
+.panel-title h4 i{padding: 0 10px; font-size: 15px;text-shadow: 0px 0px 2px white;}
+.abs-group .btn{padding: 8px 5px}
+.abs-group .btn,.sett-group .btn, .abs-group .btn:hover, .abs-group .btn:focus{background-image:linear-gradient(to bottom,#fff 0,#e0e0e0 100%); border: 1px solid #ddd; color:#222 }
+.sett-group .glyphicon{font-size: 20px; }
+
+
+.no-padding{padding: 5px 0}
