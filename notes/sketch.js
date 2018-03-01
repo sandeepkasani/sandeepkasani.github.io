@@ -7,7 +7,7 @@ var waveType;
 var playing = false;
 var notes = [240,270,300,320,360,400,450,470];
 // notes = [450,360,300,240,270,320,400,470]
-notes = [640,270,300,320,360,400,450,470];
+// notes = [640,270,300,320,360,400,450,470];
 
 function setup() {
   createCanvas(10, 10);
