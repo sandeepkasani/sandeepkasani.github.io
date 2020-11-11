@@ -1,24 +1,27 @@
 var sparks = [];
 
+let started= false;
 let fireSound;
 let burstSound;
 function preload() {
   soundFormats('mp3');
-  //fireSound = loadSound('sounds/fire');
-  //burstSound = loadSound('sounds/burst');
+  fireSound = loadSound('sounds/gunshot');
+  burstSound = loadSound('sounds/burst');
 }
 
 function fireShots(){
-  fireShot();  
-  fireShot();  
-  fireShot();  
-  fireShot();  
+  if(!started){
+	  for(let i= 0; i<4; i++){
+		window.setTimeout(()=>{
+		  fireShot()
+   	    },random(1,10)*200)
+	  } 
+	  started = true
+  }
 }
 
 function setup() {
   createCanvas(windowWidth - 50, windowHeight-30);
-  burstSound = new p5.SoundFile('sounds/fire')  
-  $("canvas").focus() 
   frameRate(60);
 }
 
@@ -34,7 +37,7 @@ function burst(x,y, clr){
 
 // function mouseDragged() {
 function mousePressed() {	
-  fireShot();
+  fireShots();
 }
 
 function fireShot() {
@@ -42,12 +45,18 @@ function fireShot() {
   let y = windowHeight;
   let z = new spark(x, y, true);
   sparks.push(z)
+  fireSound.play()
 }
 
 function draw() {
   background('rgba(0,0,0,0.2)');
   fill(255);
   noStroke();
+  textSize(32);
+  if(!started){
+	textAlign(CENTER, CENTER)
+	text('click to start fireworks', width/2, height/2);
+  }
   for(i=0; i<sparks.length;i++){
 	let s = sparks[i];
 	fill(s.scolor)
