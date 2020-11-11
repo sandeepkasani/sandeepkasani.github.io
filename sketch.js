@@ -1,12 +1,25 @@
 var sparks = [];
 
+let fireSound;
+let burstSound;
+function preload() {
+  soundFormats('mp3');
+  //fireSound = loadSound('sounds/fire');
+  //burstSound = loadSound('sounds/burst');
+}
+
+function fireShots(){
+  fireShot();  
+  fireShot();  
+  fireShot();  
+  fireShot();  
+}
+
 function setup() {
   createCanvas(windowWidth - 50, windowHeight-30);
-  frameRate(60);  
-  fireShot();  
-  fireShot();  
-  fireShot();  
-  fireShot();  
+  burstSound = new p5.SoundFile('sounds/fire')  
+  $("canvas").focus() 
+  frameRate(60);
 }
 
 
@@ -15,11 +28,13 @@ function burst(x,y, clr){
   for(let i = 0; i<100; i++){
 	z = new spark(x, y, false, clr);
 	sparks.push(z)
-  }  
+  }
+  burstSound.play();  
 }
 
 // function mouseDragged() {
 function mousePressed() {	
+  fireShot();
 }
 
 function fireShot() {
@@ -55,11 +70,11 @@ function spark(x,y,isShot, pClr) {
   this.x = x;
   this.y = y;
   this.isShot = isShot;
-  this.xspeed = random(-2,2);
-  this.yspeed = isShot ? height/60 : random(-1,5);
+  this.xspeed = random(-3,3);
+  this.yspeed = isShot ? height/60 : random(0,5);
   this.gravity = isShot ? 0.1 : 0.1;
-  let clrs = ['red', 'blue', 'cyan', 'magenta', 'yellow']
-  this.scolor = isShot ? clrs[Math.floor(random(0,6))]+"" : pClr;
+  let clrs = ['red', 'blue', 'cyan', 'magenta', 'yellow', 'pink', 'orange', 'purple']
+  this.scolor = isShot ? clrs[Math.floor(random(0,9))]+"" : pClr;
   this.life = isShot ? random(70,100) :random(20,60);
   this.size = isShot ? 3 : 5;
   this.update = function(){
