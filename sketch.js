@@ -83,13 +83,14 @@ function draw() {
 	stroke(maxS.clr)
 	strokeWeight(2);
 	textAlign(CENTER, CENTER)
-	text('May your life be filled with lights of happiness', width/2, height-100);
+	textSize(20);
+	text('May your life be filled with lights of happiness', width/2, height/2+200);
 	textSize(15);
 	noStroke();
 	//text('- Malleshwari', width/2, height-20);
-	textSize(10+sparks.length/5);
+	textSize(20+sparks.length/10);
 	fill(maxS.clr)
-	text('Happy Diwali', width/2, height-200);
+	text('Happy Diwali', width/2, height/2+100);
 	fill('rgba(0,0,0,'+alpha+')')
 	//fill("rgba(200,200,200,0.5)")
 	//rect(width/2-100, height/2-20,200,40)
