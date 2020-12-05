@@ -9,6 +9,8 @@ let shotsData = {};
 let fireSound;
 let burstSound;
 let shotCount = 0;
+
+let recorder, soundFx, mediarec;
 function preload() {
   soundFormats('mp3');
   myfont = loadFont('fonts/greatvibes.otf');
@@ -29,22 +31,27 @@ function fireShots(){
 }
 
 function startRecording() {
+  recorder = new p5.SoundRecorder();
+  soundFx = new p5.SoundFile();
+  recorder.record(soundFx);
   const chunks = []; // here we will store our recorded media chunks (Blobs)
   let canvas = document.getElementById("mycanvas");
   const stream = canvas.captureStream(); // grab our canvas MediaStream
-  const rec = new MediaRecorder(stream); // init the recorder
+  mediarec = new MediaRecorder(stream); // init the recorder
   // every time the recorder has new data, we will store it in our array
-  rec.ondataavailable = e => chunks.push(e.data);
+  mediarec.ondataavailable = e => chunks.push(e.data);
   // only when the recorder stops, we construct a complete Blob from all the chunks
-  rec.onstop = e => exportVid(new Blob(chunks, {type: 'video/webm'}));
+  mediarec.onstop = e => exportVid(new Blob(chunks, {type: 'video/webm'}));
   
-  rec.start();
-  setTimeout(()=>rec.stop(), 10000); // stop recording in 3s
+  mediarec.start();
+  //setTimeout(()=>mediarec.stop(), 10000); // stop recording in 3s
 }
 
-function exportVid(blob) {
+function exportVid(vidblob) {
+  let audBlob = soundFx.getBlob();
+  let fullMediaBlob = new Blob([vidblob, audBlob],{type: 'video/webm'})
   const vid = document.createElement('video');
-  vid.src = URL.createObjectURL(blob);
+  vid.src = URL.createObjectURL(fullMediaBlob);
   vid.controls = true;
   //document.body.appendChild(vid);
   const a = document.createElement('a');
@@ -52,6 +59,8 @@ function exportVid(blob) {
   a.href = vid.src;
   a.textContent = 'download the video';
   document.body.appendChild(a);
+  recorder.stop();
+  //save(soundFile, 'mySound.wav');
 }
 
 function setup() {
@@ -83,14 +92,23 @@ function mousePressed() {
 }
 
 function fireShot() {
-	//if(shotCount < 30){
+	if(shotCount < 30){
 	  let x = random(width/3,2*width/3); 
 	  let y = windowHeight;
 	  let z = new spark(x, y, true);
 	  sparks.push(z)
 	  fireSound.play()
 	  shotCount = shotCount+1;
-	//}
+	}	
+    if(shotCount == 15){
+	  //mediarec.stop()
+	  window.setTimeout(()=>{
+		recorder.stop();
+		mediarec.stop()
+		//save(soundFile, 'mySound.mp3');
+   	  },1000)
+	  
+	}
 }
 
 function draw() {
