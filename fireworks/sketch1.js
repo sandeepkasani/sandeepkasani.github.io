@@ -20,12 +20,12 @@ function preload() {
 
 function fireShots(){
   if(!started){
-	  startRecording();
+	  //startRecording();
 	  for(let i= 0; i<shots; i++){
 		window.setTimeout(()=>{
 		  fireShot()
    	    },random(1,10)*200)
-	  } 
+	  }
 	  started = true
   }
 }
@@ -42,7 +42,7 @@ function startRecording() {
   mediarec.ondataavailable = e => chunks.push(e.data);
   // only when the recorder stops, we construct a complete Blob from all the chunks
   mediarec.onstop = e => exportVid(new Blob(chunks, {type: 'video/webm'}));
-  
+
   mediarec.start();
   //setTimeout(()=>mediarec.stop(), 10000); // stop recording in 3s
 }
@@ -73,7 +73,7 @@ function setup() {
 
 
 function burst(x,y, clr){
-  var z = null;  
+  var z = null;
   var sdata = {
 	x:x, y:y
   }
@@ -87,28 +87,28 @@ function burst(x,y, clr){
 }
 
 // function mouseDragged() {
-function mousePressed() {	
+function mousePressed() {
   fireShots();
 }
 
 function fireShot() {
-	if(shotCount < 30){
-	  let x = random(width/3,2*width/3); 
+	// if(shotCount < 30){
+	  let x = random(width/3,2*width/3);
 	  let y = windowHeight;
 	  let z = new spark(x, y, true);
 	  sparks.push(z)
 	  fireSound.play()
 	  shotCount = shotCount+1;
-	}	
+	// }
     if(shotCount == 15){
 	  //mediarec.stop()
-	  window.setTimeout(()=>{
-		recorder.stop();
-		mediarec.stop()
+	  // window.setTimeout(()=>{
+		// recorder.stop();
+		// mediarec.stop()
 		//save(soundFile, 'mySound.mp3');
-   	  },1000)
-	  
-	}
+   	// },1000)
+
+	  }
 }
 
 function draw() {
@@ -129,7 +129,7 @@ function draw() {
 		burst(s.x,s.y, s.scolor)
 		window.setTimeout(()=>{
 		  fireShot()
-   	    },random(1,10)*200) 
+   	    },random(1,10)*200)
 	  }
 	  sparks.splice(i,1);
 	  shotsData[s.scolor].count--;
@@ -141,14 +141,14 @@ function spark(x,y,isShot, pClr, id) {
   this.x = x;
   this.y = y;
   this.isShot = isShot;
-  let spd = id/30; 
+  let spd = id/30;
   this.xspeed = isShot ? random(-3,3) : spd*cos(id)//random(-3,3) > 0 ? 3 : -3;
   this.yspeed = isShot ? height/70 : spd*sin(id)//random(0,5);
-  this.gravity = isShot ? 0.1 : 0;  
+  this.gravity = isShot ? 0.1 : 0;
   let index = Math.floor(random(0,8));
   this.scolor = isShot ? clrs[index]+"" : pClr;
   if(isShot){
-	shotColor = this.scolor	
+	shotColor = this.scolor
   }
   this.life = isShot ? random(70,100) : random(20,60);
   this.size = isShot ? 3 : random(2,5);
