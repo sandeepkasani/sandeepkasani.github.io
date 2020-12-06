@@ -1,0 +1,22 @@
+a.proj-title-link{
+  text-decoration-line: none!important;
+  text-decoration-color: transparent!important;
+}
+.proj-title-name{
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+#projects .container .row{
+  justify-content: space-evenly;
+}
+
+.content-section{
+  height: 100vh
+}
+.canvasbody{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
