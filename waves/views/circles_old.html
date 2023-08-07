@@ -1,0 +1,31 @@
+<div class="col-lg-2 properties">
+  <h2 style="background-color:#aaa" class="text-center wave-head"> {{msg}} </h2>
+  <div class="clearfix list-accordian" ng-repeat="circle in circles">
+    <div class="panel-group" id="accordion{{$index + 1 }}" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading{{$index + 1 }}">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index + 1 }}" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                <h4>Circle {{$index + 1 }}<i class="indicator glyphicon glyphicon-chevron-down"></i></h4>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse{{$index + 1 }}" class="panel-collapse collapse" ng-class="{ 'in': $last }" role="tabpanel" aria-labelledby="heading{{$index + 1 }}" aria-expanded="false" style="height: 0px;">
+          <div class="panel-body">
+            <div class="col-xs-12 no-padding">
+              <div class="col-xs-6 no-padding"><label class="col-xs-7">X-Radius: </label><input class="col-xs-5" type="number" step="10" ng-model="circle.radiusx" ng-change="clear()"/></div>
+              <div class="col-xs-6 no-padding"><label class="col-xs-7">Y-Radius: </label><input class="col-xs-5" type="number" step="10" ng-model="circle.radiusy" ng-change="clear()"/></div>
+              <div class="col-xs-6 no-padding"><label class="col-xs-7"> x-center: </label><input class="col-xs-5" type="number" step="10" ng-model="circle.cx" ng-change="clear()"/></div>
+              <div class="col-xs-6 no-padding"><label class="col-xs-7"> y-center: </label><input class="col-xs-5" type="number" step="10" ng-model="circle.cy" ng-change="clear()"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 no-padding text-center"> <button class="btn btn-lg" ng-click="addCircle()">Add A circle</button></div>
+</div>
+
+<div class="col-lg-10 canvas">
+  <canvas id="myCanvas" width="1000" height="600"></canvas>
+</div>

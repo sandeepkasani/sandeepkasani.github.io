@@ -1,0 +1,16 @@
+<div class="col-lg-2 properties">
+    <div ng-repeat="wave in functionsToPlot" class="clearfix">
+      <h3 style="background-color:{{wave.color}}" class="text-center wave-head"> Wave {{$index + 1}}</h3>
+      <div class="col-xs-6">
+        <div><label>amplitude: </label><input class="col-xs-12" type="number" ng-model="wave.amplitude" ng-change="clear(wave)"/></div>
+        <div><label>wavelength: </label><input class="col-xs-12" type="number" ng-model="wave.wavelength" ng-change="clear(wave)"/></div>
+      </div>
+      <div class="col-xs-6">
+        <div><label>color: </label><input class="col-xs-12" type="text" ng-model="wave.color" ng-change="clear(wave)"/></div>
+        <div><label>function: </label><input class="col-xs-12" type="text" ng-model="wave.wave" ng-change="clear(wave)"/></div>
+      </div>
+    </div>
+</div>
+<div class="col-lg-10 canvas">
+  <canvas id="myCanvas" width="1000" height="600"></canvas>
+</div>

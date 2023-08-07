@@ -1,0 +1,71 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script language="javascript" type="text/javascript" src="js/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="js/angular.min.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <script language="javascript" src="js/p5.sound.min.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="js/Insomnia.js"></script> -->
+  <script language="javascript" type="text/javascript" src="js/app.js"></script>
+  <script language="javascript" type="text/javascript" src="js/sketch1.js"></script>
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style>
+    body {padding: 0; margin: 0; text-align: center} canvas{width: 100%;}
+    h3{margin-bottom: 0;}
+    .logo{text-align: center; margin-top: 20px;}
+    .launch{position: absolute; width: calc(100vw); height: calc(100vh);background-color: transparent;color: white;text-shadow: 0px 0px 5px black;}
+    .launch ul{display: block; margin: 0 auto; clear: both; list-style: none;padding: 0; padding:10px 20px;}
+    .launch ul li{list-style: none; float: left; border-radius: 5px;padding: 10px 0;}
+    .launch ul li.disabled p{background-color: #eee; color:ddd; opacity: 0.8}
+    .launch ul li p{
+      margin: 6px;
+      padding: 10px 0;
+      box-shadow: 0px 2px 10px;
+      border: 0.5px solid gray;
+    }
+    .launch ul li.levels{width:20%}
+    .launch .difficulty li{width:33.33%}
+    .btn-pause, .btn-sound{position: absolute; right:0; color: white; padding: 10px; border: 1px solid white; border-radius: 5px; margin: 5px; box-shadow: 0px 0px 5px black;text-shadow: 0px 0px 5px #000; }
+    #p5_loading.loadingclass{text-align: center;position: absolute; top:40%; left:10%; right:10%;}
+    .clearfix:after {
+       content: " ";
+       display: block;
+       height: 0;
+       clear: both;
+    }
+  </style>
+</head>
+
+<body ng-app = "dexter" ng-controller = "gameController">
+  <div class="launch" ng-show="gamePaused">
+    <div class="logo">
+      <h2>BLISS</h2>
+      <img src="img/logo.png" width="150"/>
+    </div>
+    <div class="buttons-section clearfix">
+      <ul class="clearfix">
+        <li class="levels" ng-repeat="level in levels" ng-click="level >= maxLevel || setLevel(level)" ng-class="level >= maxLevel ?'disabled':'' ">
+          <p  ng-style="level == currentLevel && {'background-color':'#696963','color':'white','font-weight':'bold','z-index':'2','position':'relative'}">{{level}}</p>
+        </li>
+      </ul>
+      <!-- <h3> currentLevel: {{currentLevel}}</h3> -->
+    </div>
+    <div class="clearfix">
+      <hr>
+      <h3>Difficulty</h3>
+      <ul class="clearfix difficulty">
+        <li ng-click="maxDifficulty <= 1 || setDifficulty(1)" ng-class="maxDifficulty <= 1 ? 'disabled':''" id="btn-difficulty-1"><p ng-style="difficulty == 1 && {'background-color':'#696963','color':'white','font-weight':'bold','z-index':'2','position':'relative'}">Easy</p></li>
+        <li ng-click="maxDifficulty <= 2 || setDifficulty(2)" ng-class="maxDifficulty <= 2 ? 'disabled':''" id="btn-difficulty-1"><p ng-style="difficulty == 2 && {'background-color':'#696963','color':'white','font-weight':'bold','z-index':'2','position':'relative'}">Medium</p></li>
+        <li ng-click="maxDifficulty <= 3 || setDifficulty(3)" ng-class="maxDifficulty <= 3 ? 'disabled':''" id="btn-difficulty-1"><p ng-style="difficulty == 3 && {'background-color':'#696963','color':'white','font-weight':'bold','z-index':'2','position':'relative'}">Hard</p></li>
+      </ul>
+      <p>mx: {{maxLevel}}, currentLevel: {{currentLevel}}</p>
+    </div>
+  </div>
+  <div class="btn-pause" ng-click="pauseGame($event)" ng-hide="gamePaused"> pause </div>
+
+  <div id="p5_loading" class="loadingclass">Loading... Music, Files and Everything Nice!!!</div>
+  <!-- <div class="btn-sound" ng-click="toggleMusic()" ng-show="gamePaused" ng-style="!playMusic && {'text-decoration':'line-through'}"> Music </div> -->
+  <!-- <p id="data">data:</p> -->
+</body>
+</html>

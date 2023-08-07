@@ -1,0 +1,87 @@
+<div class="col-lg-2 properties">
+  <div class="col-xs-4 no-padding text-center addItem"> <button class="btn btn-default" ng-click="addWave()">Sine <span class="glyphicon glyphicon-plus"></span></button></div>
+  <div class="col-xs-4 no-padding text-center addItem"> <button class="btn btn-default" ng-click="addWave()">Cosine <span class="glyphicon glyphicon-plus"></span></button></div>
+  <div class="col-xs-4 no-padding text-center addItem"> <button class="btn btn-default" ng-click="addParabola()">Parabola <span class="glyphicon glyphicon-plus"></span></button></div>
+  <div class="col-xs-12 no-padding">
+    <div ng-repeat="wave in functionsToPlot"  class="clearfix list-accordian">
+        <div class="panel-group" id="accordion{{$index + 1 }}" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading{{$index + 1 }}"  style="background-color:{{wave.color}}; background-image:none">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index + 1 }}" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                    <h4 class="clearfix">
+                      <span ng-show="wave.wave == 'sine' || wave.wave == 'cosine'" class="col-xs-5 wave-head">{{wave.wave}}<i class="indicator glyphicon glyphicon-chevron-down"></i></span>
+                      <span ng-show="wave.wave == 'parabola'" class="col-xs-5 wave-head">Parabola<i class="indicator glyphicon glyphicon-chevron-down"></i></span>
+                      <span ng-show="wave.wave == 'circle'" class="col-xs-5 wave-head">Ellipse<i class="indicator glyphicon glyphicon-chevron-down"></i></span>
+                      <span ng-show="wave.wave == 'spiral'" class="col-xs-5 wave-head">Spiral<i class="indicator glyphicon glyphicon-chevron-down"></i></span>
+                      <div class="col-xs-7 no-padding text-center btn-group pull-right">
+                          <span class="col-xs-2 pull-right" type=button ng-click="cloneWave(wave)"> <span class="glyphicon glyphicon-paste"></span> </span>
+                          <span class="col-xs-2 pull-right" type=button ng-click="deleteWave($index)"> <span class="glyphicon glyphicon-remove-circle"></span> </span>
+                          <span class="col-xs-2 pull-right" type=button ng-click="clear(wave)"> <span class="glyphicon glyphicon-refresh"></span> </span>
+                      </div>
+                    </h4>
+                </a>
+              </h4>
+            </div>
+            <div id="collapse{{$index + 1 }}" class="panel-collapse collapse" ng-class="{ 'in': $last }" role="tabpanel" aria-labelledby="heading{{$index + 1 }}" aria-expanded="false" style="height: 0px;">
+              <div class="panel-body" ng-show="wave.wave == 'parabola'">
+                  <div class="col-xs-12 no-padding">
+                    <label class="prop-label col-xs-2 no-padding">y=</label>
+                    <div class="col-xs-2 no-padding"><input class="form-control no-padding" type="number" ng-model="wave.a" ng-change="clear(wave)"/></div>
+                    <label class="prop-label col-xs-2 no-padding">x^2 + </label>
+                    <div class="col-xs-2 no-padding"><input class="form-control no-padding" type="number" ng-model="wave.b" ng-change="clear(wave)"/></div>
+                    <label class="prop-label col-xs-2 no-padding">x + </label>
+                    <div class="col-xs-2 no-padding"><input class="form-control no-padding" type="number" ng-model="wave.c" ng-change="clear(wave)"/></div>
+                  </div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">color: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="text" ng-model="wave.color" ng-change="clear(wave)"/></div></div>
+                  <div class="col-xs-12 no-padding text-center btn-group abs-group">
+                      <button class="btn col-xs-4" type=button ng-click="wave.absolute = 1"> <span class="glyphicon glyphicon-arrow-up"></span> </button>
+                      <button class="btn col-xs-4" type=button ng-click="wave.absolute = 0"> <span class="glyphicon glyphicon-random"></span> </button>
+                      <button class="btn col-xs-4" type=button ng-click="wave.absolute = 2"> <span class="glyphicon glyphicon-arrow-down"></span> </button>
+                  </div>
+              </div>
+              <div class="panel-body" ng-show="wave.wave == 'circle'">
+                <div class="col-xs-12 no-padding">
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7">X-Radius: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.radiusx" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7">Y-Radius: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.radiusy" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7"> x-center: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.cx" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7"> y-center: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.cy" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">color: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="text" ng-model="wave.color" ng-change="clear(wave)"/></div></div>
+                </div>
+              </div>
+              <div class="panel-body" ng-show="wave.wave == 'spiral'">
+                <div class="col-xs-12 no-padding">
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7">Step: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.step" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7">Loop: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.loop" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7"> x-center: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.cx" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7"> y-center: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.cy" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7"> dot-size: </label><input class="col-xs-5" type="number" step="10" ng-model="wave.dotSize" ng-change="clear()"/></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">color: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="text" ng-model="wave.color" ng-change="clear(wave)"/></div></div>
+                  <div class="col-xs-6 no-padding text-center"><button class="btn btn-default" ng-click="wave.clockwise =! wave.clockwise"> Clockwise <span class="glyphicon glyphicon-ok" ng-show ="wave.clockwise"></span><span class="glyphicon glyphicon-remove" ng-hide ="wave.clockwise"></span></button></div>
+                </div>
+              </div>
+              <div class="panel-body" ng-show="wave.wave == 'sine' || wave.wave == 'cosine'">
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">amplitude: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="number" ng-model="wave.amplitude" ng-change="clear(wave)"/></div></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">wavelength: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="number" ng-model="wave.wavelength" ng-change="clear(wave)"/></div></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">color: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="text" ng-model="wave.color" ng-change="clear(wave)"/></div></div>
+                  <div class="col-xs-6 no-padding"><label class="col-xs-7 prop-label">function: </label><div  class="col-xs-5 no-padding"><input class="form-control no-padding" type="text" ng-model="wave.wave" ng-change="clear(wave)"/></div></div>
+                  <div class="col-xs-12 no-padding text-center btn-group abs-group">
+                      <button class="btn col-xs-4" type=button ng-click="wave.absolute = 1"> <span class="glyphicon glyphicon-arrow-up"></span> </button>
+                      <button class="btn col-xs-4" type=button ng-click="wave.absolute = 0"> <span class="glyphicon glyphicon-random"></span> </button>
+                      <button class="btn col-xs-4" type=button ng-click="wave.absolute = 2"> <span class="glyphicon glyphicon-arrow-down"></span> </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-xs-4 no-padding text-center"><button class="btn btn-default" ng-click="config.shade =! config.shade"> Shading <span class="glyphicon glyphicon-ok" ng-show ="config.shade"></span><span class="glyphicon glyphicon-remove" ng-hide ="config.shade"></span></button></div>
+  <div class="col-xs-4 no-padding text-center"><button class="btn btn-default" ng-click="config.bounce =! config.bounce"> Bounce <span class="glyphicon glyphicon-ok" ng-show ="config.bounce"></span><span class="glyphicon glyphicon-remove" ng-hide ="config.bounce"></span></button></div>
+  <div class="col-xs-4 no-padding text-center"><button class="btn btn-default" ng-click="clear()"> Replot <span class="glyphicon glyphicon-refresh"></span> </button></div>
+  <div class="drag-right"><span class="glyphicon glyphicon-triangle-right"></span></div>
+    <!-- <div class="col-xs-4 no-padding text-center"><button class="btn btn-default" ng-click="clear()"> Replot <span class="glyphicon glyphicon-refresh"></span> </button></div> -->
+</div>
+<div class="canvas">
+  <canvas id="myCanvas" width="1000" height="600"></canvas>
+</div>
