@@ -25,7 +25,7 @@ function draw() {
   textSize(20);
   fill(0);
   textAlign(LEFT);
-  text('Kills: ' + score, 10, 30);
+  text('Kills: ' + score+ ' - x: '+player.x+' - y: '+player.y, 10, 30);
 
   player.move(tiltX, tiltY);
   // Display the player
