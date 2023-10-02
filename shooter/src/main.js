@@ -4,7 +4,7 @@ let bullets = [];
 let score = 0;
 
 let sling;
-let tiltX, tiltY;
+let tiltX = 0, tiltY = 0;
 
 function setup() {
   console.log("v1");
@@ -26,6 +26,7 @@ function draw() {
   fill(0);
   textAlign(LEFT);
   text('Kills: ' + score+ ' - x: '+player.x+' - y: '+player.y, 10, 30);
+  text('Kills: ' + score+ ' - x: '+tiltX+' - y: '+tiltY, 50, 100);
 
   player.move(tiltX, tiltY);
   // Display the player
