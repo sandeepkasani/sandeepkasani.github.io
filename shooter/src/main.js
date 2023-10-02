@@ -76,8 +76,12 @@ function mouseReleased() {
 
 
 function deviceMoved() {
-  // Use accelerometer data to move the player
-  let x = accelerationX;
-  let y = accelerationY;
-  player.move(x, y);
+  let tiltX = radians(rotationY);
+  let tiltY = radians(rotationX);
+
+  // Adjust the speed multiplier based on your preference
+  let speedMultiplier = 0.3;
+
+  // Move the player based on tilting
+  player.move(tiltX * speedMultiplier, tiltY * speedMultiplier);
 }
