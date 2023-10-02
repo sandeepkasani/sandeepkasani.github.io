@@ -79,6 +79,6 @@ function mouseReleased() {
 
 
 function deviceMoved() {
-  let tiltX = radians(rotationY);
-  let tiltY = radians(rotationX);
+  tiltX = radians(rotationY);
+  tiltY = radians(rotationX);
 }
