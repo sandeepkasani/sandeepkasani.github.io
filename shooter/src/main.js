@@ -4,6 +4,7 @@ let bullets = [];
 let score = 0;
 
 let sling;
+let tiltX, tiltY;
 
 function setup() {
   console.log("v1");
@@ -26,6 +27,7 @@ function draw() {
   textAlign(LEFT);
   text('Kills: ' + score, 10, 30);
 
+  player.move(tiltX, tiltY);
   // Display the player
   player.display();
 
@@ -78,10 +80,4 @@ function mouseReleased() {
 function deviceMoved() {
   let tiltX = radians(rotationY);
   let tiltY = radians(rotationX);
-
-  // Adjust the speed multiplier based on your preference
-  let speedMultiplier = 0.3;
-
-  // Move the player based on tilting
-  player.move(tiltX * speedMultiplier, tiltY * speedMultiplier);
 }
