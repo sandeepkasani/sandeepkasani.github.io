@@ -6,6 +6,7 @@ let score = 0;
 let sling;
 
 function setup() {
+  console.log("v1");
   createCanvas(windowWidth, windowHeight); // Use window width and height
   player = new Player();
   sling = new SlingShot(player, 0.1);
