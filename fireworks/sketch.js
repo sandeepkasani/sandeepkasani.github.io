@@ -22,7 +22,7 @@ function fireShots(){
 		window.setTimeout(()=>{
 		  fireShot()
    	    },random(1,10)*200)
-	  } 
+	  }
 	  started = true
   }
 }
@@ -36,7 +36,7 @@ function setup() {
 
 
 function burst(x,y, clr){
-  var z = null;  
+  var z = null;
   var sdata = {
 	x:x, y:y
   }
@@ -50,13 +50,13 @@ function burst(x,y, clr){
 }
 
 // function mouseDragged() {
-function mousePressed() {	
+function mousePressed() {
   fireShots();
 }
 
 function fireShot() {
 	if(shotCount < 50){
-	  let x = random(width/3,2*width/3); 
+	  let x = random(width/3,2*width/3);
 	  let y = windowHeight;
 	  let z = new spark(x, y, true);
 	  sparks.push(z)
@@ -74,7 +74,7 @@ function draw() {
 	textAlign(CENTER, CENTER)
 	//text('click to start fireworks', width/2, height/2);
   }
-  else{	
+  else{
 	//fill(clrs[Math.floor(random(0,9))]+"");
 	let maxS = Object.values(shotsData).reduce(function(prev, current) {
 	  return (prev.count > current.count) ? prev : current
@@ -106,7 +106,7 @@ function draw() {
 		burst(s.x,s.y, s.scolor)
 		window.setTimeout(()=>{
 		  fireShot()
-   	    },random(1,10)*200) 
+   	    },random(1,10)*200)
 	  }
 	  sparks.splice(i,1);
 	  shotsData[s.scolor].count--;
@@ -118,13 +118,13 @@ function spark(x,y,isShot, pClr) {
   this.x = x;
   this.y = y;
   this.isShot = isShot;
-  this.xspeed = random(-2,2);
-  this.yspeed = isShot ? height/70 : random(-1,5);
-  this.gravity = isShot ? 0.1 : 0.1;  
+  this.xspeed = random(-5,5);
+  this.yspeed = isShot ? height/70 : random(-5,5);
+  this.gravity = isShot ? 0.1 : 0.1;
   let index = Math.floor(random(0,8));
   this.scolor = isShot ? clrs[index]+"" : pClr;
   if(isShot){
-	shotColor = this.scolor	
+	shotColor = this.scolor
   }
   this.life = isShot ? random(70,100) :random(20,60);
   this.size = isShot ? 3 : 5;
