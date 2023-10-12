@@ -7,7 +7,6 @@ let sling;
 let tiltX = 0, tiltY = 0;
 
 function setup() {
-  console.log("v1");
   createCanvas(windowWidth, windowHeight); // Use window width and height
   player = new Player();
   sling = new SlingShot(player, 0.1);
@@ -25,8 +24,8 @@ function draw() {
   textSize(20);
   fill(0);
   textAlign(LEFT);
-  text('Kills: ' + score+ ' - x: '+player.x+' - y: '+player.y, 10, 30);
-  text('Kills: ' + score+ ' - x: '+tiltX+' - y: '+tiltY, 50, 100);
+  text('Kills: ' + score, 10, 30);
+  text('x: '+tiltX+' - y: '+tiltY+ ' - x: '+Math.round(player.x)+' - y: '+Math.round(player.y), windowWidth-250, 30);
 
   player.move(tiltX, tiltY);
   // Display the player
