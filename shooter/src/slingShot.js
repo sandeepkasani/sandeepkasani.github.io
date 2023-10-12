@@ -1,3 +1,4 @@
+// slingShot.js
 class SlingShot {
   constructor(player, strength) {
     this.player = player;
@@ -6,6 +7,9 @@ class SlingShot {
   }
 
   attach(bullets) {
+    // Reset particles array when a new bullet is attached
+    particles = [];
+    
     if (this.bullet === null) {
       this.bullet = new Bullet(this.player.x, this.player.y);
       bullets.push(this.bullet);
@@ -22,7 +26,7 @@ class SlingShot {
 
   release() {
     if (this.bullet !== null) {
-      this.bullet.shoot(-2*this.strength);
+      this.bullet.shoot(-2 * this.strength);
       this.bullet = null;
     }
     this.strength = 0.1;

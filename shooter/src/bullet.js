@@ -1,3 +1,6 @@
+// bullet.js
+let particles = []; // Define the particles array
+
 class Bullet {
   constructor(x, y) {
     this.x = x;
@@ -17,18 +20,33 @@ class Bullet {
     if (!this.dragging) {
       this.x += this.speed.x;
       this.y += this.speed.y;
+
+      // Add particle effects
+      for (let i = 0; i < 2; i++) {
+        particles.push(new Particle(this.x, this.y));
+      }
     }
   }
 
   display() {
-    fill(255);
-    ellipse(this.x, this.y, this.size, this.size);
+    // Draw the trail first
+    for (let i = particles.length - 1; i >= 0; i--) {
+      particles[i].update();
+      particles[i].display();
+      if (particles[i].alpha <= 0) {
+        particles.splice(i, 1);
+      }
+    }
 
     // If dragging, draw a line from player to bullet
     if (this.dragging) {
-      stroke(255);
+      stroke(255, 50); // Semi-transparent trail
       line(this.x, this.y, mouseX, mouseY);
     }
+
+    // Display the bullet
+    fill(255);
+    ellipse(this.x, this.y, this.size, this.size);
   }
 
   shoot(strength) {
@@ -39,10 +57,38 @@ class Bullet {
 
   hits(enemy) {
     let d = dist(this.x, this.y, enemy.x, enemy.y);
-    return d < this.size / 2 + enemy.size / 2;
+    if (d < this.size / 2 + enemy.size / 2) {
+      // Apply blast effect to the enemy
+      enemy.blast();
+      return true;
+    }
+    return false;
   }
 
   isOutOfBounds() {
     return this.x < 0 || this.x > width || this.y < 0 || this.y > height;
+  }
+}
+
+class Particle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.size = random(2, 5);
+    this.color = color(255); // Set color to white
+    this.speed = createVector(random(-2, 2), random(-2, 2));
+    this.alpha = 255;
+  }
+
+  update() {
+    this.x += this.speed.x;
+    this.y += this.speed.y;
+    this.alpha -= 5;
+  }
+
+  display() {
+    noStroke();
+    fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.alpha);
+    ellipse(this.x, this.y, this.size, this.size);
   }
 }

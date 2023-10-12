@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(200); // Grey background
+  background(20); // Grey background
 
   // Display the score
   textSize(20);

@@ -25,7 +25,7 @@ class Player {
   }
 
   move(targetX, targetY) {
-    this.x = lerp(this.x, targetX, 0.1);
-    this.y = lerp(this.y, targetY, 0.1);
+    // this.x = lerp(this.x, targetX, 0.1);
+    // this.y = lerp(this.y, targetY, 0.1);
   }
 }
