@@ -45,18 +45,23 @@ function draw() {
   for (let i = bullets.length - 1; i >= 0; i--) {
     bullets[i].update();
     bullets[i].display();
-
+  
     // Check for collisions with enemies
     for (let j = enemies.length - 1; j >= 0; j--) {
       if (bullets[i].hits(enemies[j])) {
-        bullets.splice(i, 1);
-        enemies.splice(j, 1);
-        enemies.push(new Enemy());
-        score++;
-        break;
+        enemies[j].isHit = true; // Mark the enemy as hit
+        bullets.splice(i, 1); // Remove the bullet that hit the enemy
+  
+        // Delayed removal of the hit enemy after 0.5 seconds
+        setTimeout(() => {
+          enemies.splice(j, 1);
+          enemies.push(new Enemy()); // Spawn a new enemy
+        }, 500);
+        
+        break; // Break out of the inner loop after hitting an enemy
       }
     }
-
+  
     // Remove bullets out of bounds
     if (bullets[i] && bullets[i].isOutOfBounds()) {
       bullets.splice(i, 1);
