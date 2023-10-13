@@ -69,26 +69,3 @@ class Bullet {
     return this.x < 0 || this.x > width || this.y < 0 || this.y > height;
   }
 }
-
-class Particle {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-    this.size = random(2, 5);
-    this.color = color(255); // Set color to white
-    this.speed = createVector(random(-2, 2), random(-2, 2));
-    this.alpha = 255;
-  }
-
-  update() {
-    this.x += this.speed.x;
-    this.y += this.speed.y;
-    this.alpha -= 5;
-  }
-
-  display() {
-    noStroke();
-    fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.alpha);
-    ellipse(this.x, this.y, this.size, this.size);
-  }
-}

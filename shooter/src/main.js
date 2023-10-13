@@ -18,12 +18,14 @@ function setup() {
 }
 
 function draw() {
-  background(20); // Grey background
+  background(20); // Clear the canvas at the beginning of each frame
+
+  // Display the score text properties
+  textSize(20);
+  fill(255);
+  textAlign(LEFT);
 
   // Display the score
-  textSize(20);
-  fill(0);
-  textAlign(LEFT);
   text('Kills: ' + score, 10, 30);
   text('x: '+tiltX+' - y: '+tiltY+ ' - x: '+Math.round(player.x)+' - y: '+Math.round(player.y), windowWidth-250, 30);
 
@@ -45,23 +47,23 @@ function draw() {
   for (let i = bullets.length - 1; i >= 0; i--) {
     bullets[i].update();
     bullets[i].display();
-  
+
     // Check for collisions with enemies
     for (let j = enemies.length - 1; j >= 0; j--) {
       if (bullets[i].hits(enemies[j])) {
+        bullets.splice(i, 1);
         enemies[j].isHit = true; // Mark the enemy as hit
-        bullets.splice(i, 1); // Remove the bullet that hit the enemy
-  
-        // Delayed removal of the hit enemy after 0.5 seconds
         setTimeout(() => {
+          // Remove the enemy after 0.5 seconds
           enemies.splice(j, 1);
-          enemies.push(new Enemy()); // Spawn a new enemy
+          enemies.push(new Enemy());
         }, 500);
-        
-        break; // Break out of the inner loop after hitting an enemy
+        score++;
+        break;
       }
     }
-  
+
+
     // Remove bullets out of bounds
     if (bullets[i] && bullets[i].isOutOfBounds()) {
       bullets.splice(i, 1);
